@@ -1,0 +1,140 @@
+:root {
+    --green: #00ff00ff;
+    --red: #cc0000ff;
+    --bgcolour: #444444ff;
+    --debug: 3px solid var(--green);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--green);
+    position: relative;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+#bg {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-color: var(--bgcolour);
+    position: absolute;
+}
+
+#mainbox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#homeheader {
+    height: 20%;
+    width: 100%;
+    background-color: var(--red);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+#mainlogo {
+    height: 70%;
+    width: 100%;
+    font-size: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    justify-self: center;
+    z-index: 1;
+    outline: var(--debug);
+}
+#headerbuttons {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    justify-self: flex-end;
+}
+.headerbutton {
+    height: 100%;
+    width: calc(100%/3);
+    background-color: var(--red);
+    border: none;
+}
+.header-btn-text {
+    display: inline-block;
+    line-height: 4;
+    height: 100%;
+    width: 100%;
+}
+.header-btn-text:after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    transform: scaleX(0);
+    height: 0.2vh;
+    bottom: 30%;
+    left: 35%;
+    background-color: var(--green);
+    transform-origin: center;
+    transition: transform 0.5s ease-out;
+}
+  
+.header-btn-text:hover:after {
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+.headerbutton.blurred {
+    animation: btnBlur 1s 1 normal forwards;
+}
+#homemain{
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+#textbox {
+    height: 75%;
+    width: 75%;
+    background-color: #00000044;
+    outline: 3px solid #ff000044;
+    padding: 2%;
+}
+a {
+    text-decoration: none;
+}
+a:after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    transform: scaleX(0);
+    height: 0.2vh;
+    bottom: -5%;
+    left: -20%;
+    background-color: var(--green);
+    transform-origin: center;
+    transition: transform 0.5s ease-out;
+}
+a:hover:after {
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+@keyframes btnBlur {
+    to {
+        filter: blur(0.5vh);
+    }
+}
